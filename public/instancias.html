@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oryon Trace - Instâncias</title>
+  <link rel="stylesheet" href="/style/pgs.css">
+</head>
+<body>
+
+  <!-- LOADING -->
+  <div id="loading-overlay" style="display: none;">
+      <div class="spinner"></div>
+  </div>
+  <!-- LOADING -->
+
+  <div class="header">
+    <a href="home.html"><img class="logo" src="/img/ml-registro.jpg"></a>
+    <p id="user-name"></p> 
+    <button id="logout-button">Logout</button>
+  </div>
+
+  <div class="menu">
+    <a href="instancias.html" class="link-menu">Instâncias</a>
+    <a href="usuarios.html" class="link-menu">Usuários</a>
+    <a href="eventos.html" class="link-menu">Eventos</a>
+  </div>
+
+  <div class="container">
+    <h1>Gerenciamento de Instâncias</h1>
+    <div class="add-instancia">
+      <button id="btn-abrir-modal-cad-instancia">Nova Instância</button>
+    </div>
+    <div id="instancias-list" class="instancias-grid"></div>
+  </div>
+
+  <!-- Modal para cadastrar instância -->
+  <div id="modal-cad-instancia" class="modal">
+    <div class="modal-content">
+      <span id="btn-fechar-modal-cad-instancia" class="close">&times;</span>
+      <h2>Cadastrar Nova Instância</h2>
+      <form id="form-cad-instancia">
+        <div>
+          <label for="input-nome">Nome:</label>
+          <input type="text" id="input-nome" name="nome" required />
+        </div>
+        <div>
+          <label for="input-telefone">Telefone (formato 55996661595):</label>
+          <input type="text" id="input-telefone" name="telefone" required />
+        </div>
+        <button type="submit" id="btn-cad-instancia">Cadastrar</button>
+      </form>
+      <div id="qr-code-container" style="margin-top: 20px; display: none; text-align: center;">
+        <h3>Escaneie o QR Code abaixo:</h3>
+        <img id="qr-code-img" src="" alt="QR Code" style="max-width: 100%; height: auto;" />
+      </div>
+    </div>
+  </div>
+  <div id="modal-reconnect-instancia" class="modal">
+    <div class="modal-content">
+        <h2 id="reconnect-title">Reconectando a instância</h2>
+        <div id="qr-code-reconnect-container" style="margin: 20px auto; text-align: center;">
+            <h3>Escaneie o QR Code abaixo:</h3>
+            <img id="qr-code-reconnect-img" src="" alt="QR Code Reconexão" style="max-width: 100%; height: auto;" />
+        </div>
+        <button id="btn-reconnect-ok" class="btn-primary">OK</button>
+    </div>
+</div>
+
+
+  <script src="/js/script-instancias.js"></script>
+</body>
+</html>

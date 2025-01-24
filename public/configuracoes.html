@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações da Instância</title>
+  <link rel="stylesheet" href="/style/pgs.css">
+</head>
+<body>
+
+<!-- LOADING -->
+  <div id="loading-overlay" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+<!-- LOADING -->
+
+  <div class="header">
+    <a href="home.html"><img class="logo" src="/img/ml-registro.jpg" alt="Logo"></a>
+    <div class="user-info">
+      <p id="user-name">Usuário Logado</p> 
+      <button id="logout-button">Logout</button>
+    </div>
+  </div>
+
+  <div class="menu">
+    <a href="instancias.html" class="link-menu">Instâncias</a>
+    <a href="usuarios.html" class="link-menu">Usuários</a>
+    <a href="eventos.html" class="link-menu">Eventos</a>
+  </div>
+
+  <div class="container">
+    <h1>Configurações da Instância: <span id="instancia-nome">Carregando...</span></h1>
+
+    <div id="configuracoes-container" class="config-section">
+        <h2>Webhooks</h2>
+        <div class="webhook-group">
+          <label for="evento-me">Mensagem Enviada</label>
+          <input id="evento-me" class="input-field" type="url" placeholder="Link do Webhook" />
+        </div>
+        <div class="webhook-group">
+          <label for="evento-mr">Mensagem Recebida</label>
+          <input id="evento-mr" class="input-field" type="url" placeholder="Link do Webhook" />
+        </div>
+        <div class="webhook-group">
+          <label for="evento-nc">Novo Contato</label>
+          <input id="evento-nc" class="input-field" type="url" placeholder="Link do Webhook" />
+        </div>
+        <div class="webhook-group">
+          <label for="evento-ag">Agendamento</label>
+          <input id="evento-ag" class="input-field" type="url" placeholder="Link do Webhook" />
+        </div>
+        <div class="webhook-group">
+          <label for="evento-instancia-conectada">Instância Conectada</label>
+          <input id="evento-instancia-conectada" class="input-field" type="url" placeholder="Link do Webhook">
+      </div>
+      <div class="webhook-group">
+          <label for="evento-instancia-desconectada">Instância Desconectada</label>
+          <input id="evento-instancia-desconectada" class="input-field" type="url" placeholder="Link do Webhook">
+      </div>
+      <h2>Mensagens</h2>
+        <div class="webhook-group">
+          <label for="evento-agendamento">Mensagem de Agendamento</label>
+          <input id="evento-agendamento" class="input-field" type="text" placeholder="Mensagem de agendamento">
+      </div>
+      <div class="webhook-group">
+          <label for="evento-cancelamento-agendamento">Mensagem de Cancelamento</label>
+          <input id="evento-cancelamento-agendamento" class="input-field" type="text" placeholder="Mensagem de cancelamento">
+      </div>
+    </div>
+  
+    <div id="configuracoes-meta" class="config-section">
+      <h2>Meta Configurações</h2>
+      <div class="meta-group">
+        <label for="meta-pixel">ID do Pixel</label>
+        <input id="meta-pixel" class="input-field" type="text" placeholder="ID do Pixel" />
+      </div>
+      <div class="meta-group">
+        <label for="meta-token">Chave Token</label>
+        <input id="meta-token" class="input-field" type="text" placeholder="Token de Conversão" />
+      </div>
+    </div>
+
+    <button id="save-config" class="btn-primary">Salvar Configurações</button>
+    <p id="feedback" style="margin-top: 10px;"></p>
+  </div>
+
+  <script src="/js/configuracoes.js"></script>
+</body>
+</html>
